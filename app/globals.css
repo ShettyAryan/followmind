@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Design tokens ─────────────────────────────────────── */
+:root {
+  --bg-base:        #04070E;
+  --accent-blue:    #4A9EFF;
+  --accent-glow:    rgba(74, 158, 255, 0.15);
+  --text-primary:   #F0F4FF;
+  --text-secondary: #7A8BA8;
+  --text-muted:     #3D4F66;
+  --green-signal:   #3DDC97;
+  --border-subtle:  rgba(255, 255, 255, 0.08);
+}
+
+/* ── Base ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── Typography helpers ────────────────────────────────── */
+.font-serif { font-family: 'Playfair Display', Georgia, serif; }
+.font-mono  { font-family: 'JetBrains Mono', 'Fira Code', monospace; }
+
+/* ── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: rgba(74,158,255,0.2); border-radius: 2px; }
+
+/* ── Glass morphism ────────────────────────────────────── */
+.glass {
+  background:          rgba(255, 255, 255, 0.04);
+  backdrop-filter:     blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid   rgba(255, 255, 255, 0.08);
+}
+.glass-hover:hover {
+  background:     rgba(255, 255, 255, 0.07);
+  border-color:   rgba(255, 255, 255, 0.12);
+}
+
+/* ── Grain overlay ─────────────────────────────────────── */
+.grain::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  opacity: 0.3;
+}
+
+/* ── Shimmer button ────────────────────────────────────── */
+.btn-shimmer { position: relative; overflow: hidden; }
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.15) 50%, transparent 60%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.btn-shimmer:hover::after { opacity: 1; }
+
+/* ── Scan line ─────────────────────────────────────────── */
+.scan-line { position: relative; overflow: hidden; }
+.scan-line::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(74,158,255,0.4), transparent);
+  animation: scan 3s linear infinite;
+  z-index: 1;
+}
+
+/* ── Typing cursor ─────────────────────────────────────── */
+.typing-cursor::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+  color: var(--accent-blue);
+  margin-left: 1px;
+}
+
+/* ── Scroll reveal ─────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity   0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible   { opacity: 1; transform: translateY(0); }
+.reveal-delay-1   { transition-delay: 0.10s; }
+.reveal-delay-2   { transition-delay: 0.20s; }
+.reveal-delay-3   { transition-delay: 0.30s; }
+.reveal-delay-4   { transition-delay: 0.40s; }
+.reveal-delay-5   { transition-delay: 0.50s; }
+.reveal-delay-6   { transition-delay: 0.60s; }
+
+/* ── Section label rule ────────────────────────────────── */
+.section-rule::before {
+  content: '';
+  display: inline-block;
+  width: 32px; height: 1px;
+  background: var(--accent-blue);
+  vertical-align: middle;
+  margin-right: 12px;
+}
+
+/* ── Card hover glow ───────────────────────────────────── */
+.card-glow:hover {
+  box-shadow: 0 0 0 1px rgba(74,158,255,0.2), 0 8px 32px rgba(74,158,255,0.08);
+}
+
+/* ── Status badges ─────────────────────────────────────── */
+.badge-overdue  { color: #FF6B6B; background: rgba(255,107,107,0.10); border-color: rgba(255,107,107,0.20); }
+.badge-today    { color: #FFD166; background: rgba(255,209,102,0.10); border-color: rgba(255,209,102,0.20); }
+.badge-upcoming { color: #3DDC97; background: rgba(61,220,151,0.10);  border-color: rgba(61,220,151,0.20); }
+
+/* ── Hero overlays ─────────────────────────────────────── */
+.hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(4,7,14,0.72) 0%,
+    rgba(4,7,14,0.60) 40%,
+    rgba(4,7,14,0.82) 80%,
+    rgba(4,7,14,1.00) 100%
+  );
+}
+.hero-ambient {
+  background: radial-gradient(
+    ellipse 60% 40% at 50% 60%,
+    rgba(74,158,255,0.06) 0%, transparent 70%
+  );
+}
+
+/* ── Step number ───────────────────────────────────────── */
+.step-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+}
+
+/* ── Glow divider ──────────────────────────────────────── */
+.glow-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(74,158,255,0.4) 50%, transparent 100%);
+}
+
+/* ── Marquee ───────────────────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+/* ── Testimonial card ──────────────────────────────────── */
+.testimonial-card {
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.testimonial-card:hover {
+  border-color: rgba(74,158,255,0.2);
+  box-shadow: 0 0 32px rgba(74,158,255,0.06);
+}
+
+/* ── Dot grid ──────────────────────────────────────────── */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(74,158,255,0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* ── Metric card ───────────────────────────────────────── */
+.metric-card {
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: border-color 0.3s, transform 0.3s;
+}
+.metric-card:hover {
+  border-color: rgba(74,158,255,0.18);
+  transform: translateY(-3px);
+}
+
+/* ── FAQ item ──────────────────────────────────────────── */
+.faq-item {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: border-color 0.2s;
+}
+.faq-item:hover { border-bottom-color: rgba(74,158,255,0.2); }
+
+/* ── Progress bar fill ─────────────────────────────────── */
+@keyframes fillBar {
+  from { width: 0%; }
+  to   { width: var(--bar-width); }
+}
+.bar-fill {
+  animation: fillBar 1.4s cubic-bezier(0.16,1,0.3,1) forwards;
+  animation-delay: 0.3s;
+  width: 0%;
+}
+
+/* ── Keyframe definitions ──────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes pulseDot {
+  0%, 100% { opacity: 1;   transform: scale(1);    }
+  50%       { opacity: 0.4; transform: scale(0.85); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+@keyframes scan {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(400%);  }
+}
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(74,158,255,0.1); }
+  50%       { box-shadow: 0 0 40px rgba(74,158,255,0.3); }
+}
+@keyframes arrowPulse {
+  0%, 100% { opacity: 0.3; transform: translateX(0);   }
+  50%       { opacity: 1;   transform: translateX(4px); }
+}
