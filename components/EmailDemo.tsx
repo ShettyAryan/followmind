@@ -53,7 +53,7 @@ export default function EmailDemo() {
   }
 
   return (
-    <section className="py-24 px-6" ref={ref}>
+    <section className="py-20 sm:py-24 px-4 sm:px-6" ref={ref}>
       <div className="max-w-6xl mx-auto">
         <div
           className="glass rounded-3xl overflow-hidden border border-white/8 shadow-2xl"
@@ -61,7 +61,7 @@ export default function EmailDemo() {
         >
           <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/8">
             {/* Left — Contact record */}
-            <div className="p-10">
+            <div className="p-6 sm:p-8 lg:p-10">
               <div className="flex items-center gap-2 mb-8">
                 <span className="section-rule font-mono text-[10px] tracking-[0.2em] uppercase text-[#3D4F66]">
                   Contact Record
@@ -109,7 +109,7 @@ export default function EmailDemo() {
             </div>
 
             {/* Right — AI draft */}
-            <div className="p-10 relative">
+            <div className="p-6 sm:p-8 lg:p-10 relative">
               <div className="flex items-center justify-between mb-8">
                 <span className="section-rule font-mono text-[10px] tracking-[0.2em] uppercase text-[#3D4F66]">
                   AI-Generated Draft
@@ -155,7 +155,7 @@ export default function EmailDemo() {
                 </div>
               </div>
 
-              <div className="mt-8 flex gap-3">
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <button className="flex-1 py-3 glass rounded-xl text-[11px] font-mono text-[#7A8BA8] border border-white/8 hover:text-[#F0F4FF] transition-colors">
                   Edit Draft
                 </button>

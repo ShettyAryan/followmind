@@ -16,7 +16,7 @@ export default function FooterCTA() {
   return (
     <>
       {/* CTA Section */}
-      <section className="py-32 px-6 relative overflow-hidden" ref={ref}>
+      <section className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 relative overflow-hidden" ref={ref}>
         {/* Subtle video bleed */}
         <div className="absolute inset-0 z-0 opacity-20">
           <video
@@ -50,7 +50,7 @@ export default function FooterCTA() {
         />
 
         <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <div className="reveal font-mono text-[9px] tracking-[0.25em] uppercase text-[#3D4F66] mb-6">
+          <div className="reveal font-mono text-[9px] tracking-[0.2em] sm:tracking-[0.25em] uppercase text-[#3D4F66] mb-5 sm:mb-6">
             Ready to start
           </div>
           <h2 className="reveal reveal-delay-1 font-serif text-[clamp(2.4rem,6vw,4rem)] text-[#F0F4FF] leading-tight tracking-tight mb-6">
@@ -60,7 +60,7 @@ export default function FooterCTA() {
               Your drafts are ready.
             </em>
           </h2>
-          <p className="reveal reveal-delay-2 text-[#7A8BA8] text-base leading-relaxed mb-10 max-w-lg mx-auto">
+          <p className="reveal reveal-delay-2 text-[#7A8BA8] text-sm sm:text-base leading-relaxed mb-8 sm:mb-10 max-w-lg mx-auto">
             Join the waitlist. Be first when FollowMind opens to the public. No
             credit card. No noise.
           </p>
@@ -68,7 +68,7 @@ export default function FooterCTA() {
             <input
               type="email"
               placeholder="you@company.com"
-              className="glass border border-white/10 rounded-full px-6 py-3.5 text-sm text-[#F0F4FF] placeholder-[#3D4F66] outline-none focus:border-[#4A9EFF]/40 transition-colors w-72"
+              className="glass border border-white/10 rounded-full px-5 sm:px-6 py-3.5 text-sm text-[#F0F4FF] placeholder-[#3D4F66] outline-none focus:border-[#4A9EFF]/40 transition-colors w-full sm:w-72"
             />
             <button className="btn-shimmer bg-[#4A9EFF] text-[#04070E] px-7 py-3.5 rounded-full font-semibold text-sm hover:brightness-110 transition-all active:scale-95 shadow-xl shadow-[#4A9EFF]/25 whitespace-nowrap">
               Join the Waitlist
@@ -82,7 +82,7 @@ export default function FooterCTA() {
 
       {/* Footer */}
       <footer
-        className="border-t border-white/5 py-12 px-8"
+        className="border-t border-white/5 py-10 sm:py-12 px-4 sm:px-6 lg:px-8"
         style={{ background: "rgba(4,7,14,0.98)" }}
       >
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
@@ -109,7 +109,7 @@ export default function FooterCTA() {
             </span>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-8">
             {["Privacy Policy", "Terms of Service", "Security", "Status"].map(
               (l) => (
                 <a

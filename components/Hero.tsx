@@ -23,24 +23,24 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 pt-28 text-center flex flex-col items-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-3 sm:px-6 pt-24 sm:pt-28 text-center flex flex-col items-center">
         {/* Badge */}
         <div
-          className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass border-l-2 mb-10 cursor-default"
+          className="inline-flex items-center gap-2.5 px-3 sm:px-4 py-2 rounded-full glass border-l-2 mb-8 sm:mb-10 cursor-default"
           style={{ borderLeftColor: "#4A9EFF" }}
         >
           <span
             className="w-1.5 h-1.5 rounded-full animate-pulse-dot"
             style={{ background: "#3DDC97" }}
           />
-          <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#7A8BA8]">
+          <span className="font-mono text-[8px] sm:text-[10px] tracking-[0.12em] sm:tracking-[0.2em] uppercase text-[#7A8BA8]">
             Now live — Google Sheets + Gmail
           </span>
         </div>
 
         {/* Headline */}
         <h1
-          className="text-[clamp(3rem,9vw,5.5rem)] font-serif text-[#F0F4FF] leading-[1.05] tracking-tight mb-6"
+          className="text-[clamp(2.3rem,10vw,5.5rem)] font-serif text-[#F0F4FF] leading-[1.05] tracking-tight mb-5 sm:mb-6"
           style={{ textShadow: "0 0 80px rgba(74,158,255,0.12)" }}
         >
           Stop forgetting.
@@ -49,23 +49,23 @@ export default function Hero() {
         </h1>
 
         {/* Subheadline */}
-        <p className="max-w-xl text-base md:text-lg text-[#7A8BA8] mb-10 leading-relaxed">
+        <p className="max-w-xl text-[13px] sm:text-base md:text-lg text-[#7A8BA8] mb-8 sm:mb-10 leading-relaxed">
           Connect your Google Sheets. Get personalized, context-aware follow-up
           emails drafted directly into Gmail — automatically.
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 mb-20">
-          <button className="btn-shimmer bg-[#4A9EFF] text-[#04070E] px-8 py-4 rounded-full font-semibold text-base hover:brightness-110 transition-all duration-300 active:scale-95 shadow-2xl shadow-[#4A9EFF]/25">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-14 sm:mb-20 w-full sm:w-auto">
+          <button className="btn-shimmer bg-[#4A9EFF] text-[#04070E] px-5 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base hover:brightness-110 transition-all duration-300 active:scale-95 shadow-2xl shadow-[#4A9EFF]/25">
             Get Early Access
           </button>
-          <button className="glass glass-hover border border-white/10 text-[#F0F4FF] px-8 py-4 rounded-full font-semibold text-base transition-all duration-300 active:scale-95">
+          <button className="glass glass-hover border border-white/10 text-[#F0F4FF] px-5 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 active:scale-95">
             See how it works
           </button>
         </div>
 
         {/* Hero mockup cards */}
-        <div className="relative w-full max-w-4xl h-[360px] flex items-center justify-center mb-0">
+        <div className="relative hidden md:flex w-full max-w-4xl h-[360px] items-center justify-center mb-0">
           {/* Card 3 — Context chip (furthest back) */}
           <div
             className="absolute glass rounded-xl p-4 w-56 shadow-2xl animate-float-c"
@@ -209,6 +209,30 @@ export default function Hero() {
               filter: "blur(20px)",
             }}
           />
+        </div>
+        <div className="md:hidden w-full max-w-sm glass rounded-2xl border border-white/10 p-5 text-left">
+          <div className="flex items-center justify-between mb-4">
+            <span className="font-mono text-[9px] text-[#3D4F66] uppercase tracking-widest">
+              AI Draft Preview
+            </span>
+            <span className="font-mono text-[9px] text-[#4A9EFF] bg-[#4A9EFF]/10 px-2 py-0.5 rounded-full border border-[#4A9EFF]/20">
+              Live
+            </span>
+          </div>
+          <div className="space-y-2.5">
+            <p className="text-xs text-[#F0F4FF]">To: elena@lumon.corp</p>
+            <p className="text-xs text-[#7A8BA8] leading-relaxed">
+              FollowMind reads your context, drafts a personalized follow-up, and sends it to Gmail in one click.
+            </p>
+            <div className="pt-3 border-t border-white/5 flex gap-2">
+              <button className="flex-1 py-2.5 glass rounded-lg text-[10px] font-mono text-[#7A8BA8] border border-white/8">
+                Edit
+              </button>
+              <button className="flex-1 py-2.5 bg-[#4A9EFF] rounded-lg text-[10px] font-semibold text-[#04070E]">
+                Send
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,11 +1,11 @@
 export default function IntegrationBar() {
   return (
-    <section className="py-10 border-y border-white/5" style={{ background: "rgba(255,255,255,0.02)" }}>
-      <div className="max-w-6xl mx-auto px-8 flex flex-col sm:flex-row items-center gap-6 sm:gap-12">
+    <section className="py-8 sm:py-10 border-y border-white/5" style={{ background: "rgba(255,255,255,0.02)" }}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center gap-5 sm:gap-10 lg:gap-12">
         <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-[#3D4F66] whitespace-nowrap">
           Connects with
         </span>
-        <div className="flex flex-wrap items-center gap-4">
+        <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5 sm:gap-4">
           {[
             {
               name: "Google Sheets",
@@ -42,7 +42,7 @@ export default function IntegrationBar() {
           ].map((item) => (
             <div
               key={item.name}
-              className="flex items-center gap-2.5 px-3.5 py-2 rounded-full glass border border-white/8 text-[#7A8BA8] hover:text-[#F0F4FF] hover:border-white/15 transition-all duration-200 cursor-default"
+              className="flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full glass border border-white/8 text-[#7A8BA8] hover:text-[#F0F4FF] hover:border-white/15 transition-all duration-200 cursor-default"
             >
               {item.icon}
               <span className="text-[11px] font-medium whitespace-nowrap">{item.name}</span>

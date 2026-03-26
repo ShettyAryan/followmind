@@ -43,10 +43,10 @@ export default function FAQ() {
   }, []);
 
   return (
-    <section className="py-32 px-6 relative" ref={ref}>
+    <section className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 relative" ref={ref}>
       <div className="max-w-3xl mx-auto">
         {/* Header */}
-        <div className="mb-16">
+        <div className="mb-12 sm:mb-16">
           <div className="reveal flex items-center mb-4">
             <span className="section-rule font-mono text-[10px] tracking-[0.2em] uppercase text-[#3D4F66]">
               FAQ
@@ -67,7 +67,7 @@ export default function FAQ() {
               className={`reveal reveal-delay-${Math.min(i + 1, 4)} faq-item`}
             >
               <button
-                className="w-full flex items-start justify-between gap-6 py-6 text-left group"
+                className="w-full flex items-start justify-between gap-4 sm:gap-6 py-5 sm:py-6 text-left group"
                 onClick={() => setOpen(open === i ? null : i)}
               >
                 <span
@@ -106,7 +106,7 @@ export default function FAQ() {
                   transition: "max-height 0.4s cubic-bezier(0.16,1,0.3,1), opacity 0.3s ease",
                 }}
               >
-                <p className="pb-6 text-[13px] text-[#7A8BA8] leading-relaxed pr-12">
+                <p className="pb-6 text-[13px] text-[#7A8BA8] leading-relaxed pr-2 sm:pr-12">
                   {faq.a}
                 </p>
               </div>

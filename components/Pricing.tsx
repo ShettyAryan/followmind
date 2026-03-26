@@ -65,7 +65,7 @@ export default function Pricing() {
   }, []);
 
   return (
-    <section id="pricing" className="py-32 px-6 relative" ref={ref}>
+    <section id="pricing" className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 relative" ref={ref}>
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -74,7 +74,7 @@ export default function Pricing() {
         }}
       />
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <div className="reveal inline-flex items-center gap-0 mb-4">
             <span className="section-rule font-mono text-[10px] tracking-[0.2em] uppercase text-[#3D4F66]">
               Pricing
@@ -85,11 +85,11 @@ export default function Pricing() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 items-start">
+        <div className="grid md:grid-cols-3 gap-4 sm:gap-6 items-start">
           {plans.map((plan, i) => (
             <div
               key={plan.name}
-              className={`reveal reveal-delay-${i + 1} rounded-2xl p-8 border transition-all duration-300 relative ${
+              className={`reveal reveal-delay-${i + 1} rounded-2xl p-6 sm:p-8 border transition-all duration-300 relative ${
                 plan.featured
                   ? "glass-glow animate-glow-pulse"
                   : "glass border-white/8 card-glow"

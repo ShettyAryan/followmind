@@ -34,10 +34,10 @@ export default function Comparison() {
   }, []);
 
   return (
-    <section className="py-32 px-6 relative" ref={ref}>
+    <section className="py-20 sm:py-24 lg:py-32 px-3 sm:px-6 relative" ref={ref}>
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="mb-16">
+        <div className="mb-12 sm:mb-16">
           <div className="reveal flex items-center mb-4">
             <span className="section-rule font-mono text-[10px] tracking-[0.2em] uppercase text-[#3D4F66]">
               Why FollowMind
@@ -50,8 +50,38 @@ export default function Comparison() {
           </h2>
         </div>
 
-        {/* Table */}
-        <div className="reveal reveal-delay-2 rounded-2xl overflow-hidden border border-white/8">
+        {/* Mobile cards */}
+        <div className="md:hidden reveal reveal-delay-2 space-y-3">
+          {rows.map((row, i) => (
+            <div key={row.feature} className="rounded-xl border border-white/8 bg-white/[0.02] p-4">
+              <div className="text-xs text-[#F0F4FF] font-semibold mb-3">{row.feature}</div>
+              <div className="grid grid-cols-1 gap-2 text-[11px]">
+                <div className="rounded-lg border border-[#4A9EFF]/25 bg-[#4A9EFF]/10 px-3 py-2">
+                  <span className="font-mono text-[9px] uppercase tracking-widest text-[#4A9EFF] block mb-0.5">
+                    FollowMind
+                  </span>
+                  <span className="text-[#F0F4FF]">{row.followmind}</span>
+                </div>
+                <div className="rounded-lg border border-white/10 px-3 py-2">
+                  <span className="font-mono text-[9px] uppercase tracking-widest text-[#3D4F66] block mb-0.5">
+                    Manual
+                  </span>
+                  <span className="text-[#7A8BA8]">{row.manual}</span>
+                </div>
+                <div className="rounded-lg border border-white/10 px-3 py-2">
+                  <span className="font-mono text-[9px] uppercase tracking-widest text-[#3D4F66] block mb-0.5">
+                    CRM
+                  </span>
+                  <span className="text-[#7A8BA8]">{row.crm}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop/Tablet table */}
+        <div className="hidden md:block reveal reveal-delay-2 rounded-2xl overflow-x-auto border border-white/8">
+          <div className="min-w-[680px] sm:min-w-[760px]">
           {/* Header row */}
           <div className="grid grid-cols-4 border-b border-white/8" style={{ background: "rgba(255,255,255,0.03)" }}>
             {cols.map((col) => (
@@ -112,6 +142,7 @@ export default function Comparison() {
               </div>
             </div>
           ))}
+          </div>
         </div>
 
         {/* CTA below table */}
@@ -119,7 +150,7 @@ export default function Comparison() {
           <button className="btn-shimmer bg-[#4A9EFF] text-[#04070E] px-7 py-3.5 rounded-full font-semibold text-sm hover:brightness-110 transition-all active:scale-95 shadow-xl shadow-[#4A9EFF]/20">
             Start for free
           </button>
-          <span className="font-mono text-[10px] text-[#3D4F66]">
+          <span className="font-mono text-[10px] text-[#3D4F66] text-center sm:text-left">
             No credit card · No migration · 4-minute setup
           </span>
         </div>

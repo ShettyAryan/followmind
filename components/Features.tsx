@@ -191,12 +191,12 @@ export default function Features() {
   }, []);
 
   return (
-    <section id="features" className="py-24 px-6" ref={ref}>
-      <div className="max-w-6xl mx-auto space-y-32">
+    <section id="features" className="py-20 sm:py-24 px-4 sm:px-6" ref={ref}>
+      <div className="max-w-6xl mx-auto space-y-16 sm:space-y-24 lg:space-y-32">
         {features.map((f, i) => (
           <div
             key={f.label}
-            className={`feature-row grid md:grid-cols-2 gap-16 items-center ${i % 2 === 1 ? "md:[&>*:first-child]:order-2 md:[&>*:last-child]:order-1" : ""}`}
+            className={`feature-row grid md:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center ${i % 2 === 1 ? "md:[&>*:first-child]:order-2 md:[&>*:last-child]:order-1" : ""}`}
           >
             {/* Text */}
             <div className="reveal">

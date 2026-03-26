@@ -17,7 +17,7 @@ const items = [...events, ...events];
 export default function LiveTicker() {
   return (
     <div
-      className="py-5 border-y overflow-hidden relative"
+      className="py-4 sm:py-5 border-y overflow-hidden relative"
       style={{
         borderColor: "rgba(255,255,255,0.05)",
         background: "rgba(4,7,14,0.7)",
@@ -39,7 +39,7 @@ export default function LiveTicker() {
 
       {/* Left label */}
       <div
-        className="absolute left-6 top-1/2 -translate-y-1/2 z-20 flex items-center gap-2"
+        className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 flex items-center gap-2"
       >
         <span
           className="w-1.5 h-1.5 rounded-full"
@@ -50,7 +50,7 @@ export default function LiveTicker() {
         </span>
       </div>
 
-      <div className="marquee-track" style={{ paddingLeft: "160px" }}>
+      <div className="marquee-track" style={{ paddingLeft: "130px" }}>
         {items.map((item, i) => (
           <div
             key={i}

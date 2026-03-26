@@ -83,12 +83,8 @@ export default function Testimonials() {
     return () => observer.disconnect();
   }, []);
 
-  // Split into two columns for masonry feel
-  const col1 = testimonials.filter((_, i) => i % 2 === 0);
-  const col2 = testimonials.filter((_, i) => i % 2 === 1);
-
   return (
-    <section className="py-32 px-6 relative" ref={ref}>
+    <section className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 relative" ref={ref}>
       {/* Ambient */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none"
@@ -101,7 +97,7 @@ export default function Testimonials() {
 
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <div className="reveal flex items-center justify-center mb-4">
             <span className="section-rule font-mono text-[10px] tracking-[0.2em] uppercase text-[#3D4F66]">
               Social Proof
@@ -117,11 +113,11 @@ export default function Testimonials() {
         </div>
 
         {/* Masonry grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {testimonials.map((t, i) => (
             <div
               key={t.name}
-              className={`reveal reveal-delay-${Math.min((i % 3) + 1, 4)} testimonial-card rounded-2xl p-7 flex flex-col`}
+              className={`reveal reveal-delay-${Math.min((i % 3) + 1, 4)} testimonial-card rounded-2xl p-5 sm:p-7 flex flex-col`}
             >
               <StarRow count={t.stars} />
               <blockquote className="text-[13px] text-[#7A8BA8] leading-relaxed flex-1 mb-6">
@@ -148,7 +144,7 @@ export default function Testimonials() {
         </div>
 
         {/* Bottom metric strip */}
-        <div className="reveal reveal-delay-2 mt-16 grid grid-cols-3 divide-x divide-white/6 border border-white/6 rounded-2xl overflow-hidden">
+        <div className="reveal reveal-delay-2 mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 sm:divide-x divide-white/6 border border-white/6 rounded-2xl overflow-hidden">
           {[
             { val: "34%", label: "Avg. response rate lift" },
             { val: "1,240+", label: "Waitlist signups" },
