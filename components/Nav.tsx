@@ -21,6 +21,14 @@ export default function Nav() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [menuOpen]);
 
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 1024) setMenuOpen(false);
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   const links = ["How it works", "Features", "Pricing"];
 
   return (
@@ -30,7 +38,7 @@ export default function Nav() {
       }`}
     >
       <div
-        className={`mx-auto flex w-full max-w-7xl min-w-0 justify-between items-center px-3 sm:px-6 lg:px-8 py-3 sm:py-4 transition-all duration-500 ${
+        className={`mx-auto grid w-full max-w-7xl min-w-0 grid-cols-[1fr_auto] lg:grid-cols-[1fr_auto_1fr] items-center px-3 sm:px-6 lg:px-8 py-3 sm:py-4 transition-all duration-500 ${
           scrolled
             ? "max-w-6xl glass rounded-2xl sm:rounded-full border border-white/10 shadow-2xl shadow-black/40"
             : "border-b border-white/0"
@@ -61,7 +69,7 @@ export default function Nav() {
         </div>
 
         {/* Center links */}
-        <div className="hidden md:flex gap-8">
+        <div className="hidden lg:flex items-center justify-center gap-8 px-6">
           {links.map((l) => (
             <a
               key={l}
@@ -74,12 +82,12 @@ export default function Nav() {
         </div>
 
         {/* Right CTAs */}
-        <div className="flex items-center gap-2 sm:gap-5 shrink-0">
+        <div className="flex items-center justify-end gap-2 sm:gap-5 shrink-0">
           <button
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
-            className="md:hidden w-9 h-9 rounded-lg border border-white/10 glass flex items-center justify-center text-[#F0F4FF]"
+            className="lg:hidden w-9 h-9 rounded-lg border border-white/10 glass flex items-center justify-center text-[#F0F4FF]"
           >
             <span className="sr-only">{menuOpen ? "Close menu" : "Open menu"}</span>
             <svg className="w-4 h-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -90,17 +98,17 @@ export default function Nav() {
               )}
             </svg>
           </button>
-          <button className="hidden sm:block text-sm text-[#7A8BA8] hover:text-[#F0F4FF] transition-colors duration-200">
+          <button className="hidden lg:block text-sm text-[#7A8BA8] hover:text-[#F0F4FF] transition-colors duration-200 whitespace-nowrap">
             Log in
           </button>
-          <button className="hidden sm:block btn-shimmer bg-[#4A9EFF] text-[#04070E] text-[10px] sm:text-sm font-semibold px-3 sm:px-5 py-2 sm:py-2.5 rounded-full hover:brightness-110 transition-all duration-300 active:scale-95 shadow-lg shadow-[#4A9EFF]/20 whitespace-nowrap min-w-[92px]">
+          <button className="hidden lg:block btn-shimmer bg-[#4A9EFF] text-[#04070E] text-sm font-semibold px-5 py-2.5 rounded-full hover:brightness-110 transition-all duration-300 active:scale-95 shadow-lg shadow-[#4A9EFF]/20 whitespace-nowrap min-w-[108px]">
             Get Access
           </button>
         </div>
       </div>
 
       <div
-        className={`md:hidden mt-2 overflow-hidden transition-all duration-300 ${
+        className={`lg:hidden mt-2 overflow-hidden transition-all duration-300 ${
           menuOpen ? "max-h-72 opacity-100" : "max-h-0 opacity-0 pointer-events-none"
         }`}
       >
