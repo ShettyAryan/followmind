@@ -38,8 +38,8 @@ export default function LiveTicker() {
       />
 
       {/* Left label */}
-      <div
-        className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 flex items-center gap-2"
+      {/* <div
+        className="absolute left-3 sm:left-6 top-0 -translate-y-1/2 z-20 flex items-center gap-2"
       >
         <span
           className="w-1.5 h-1.5 rounded-full"
@@ -48,7 +48,7 @@ export default function LiveTicker() {
         <span className="font-mono text-[9px] text-[#3D4F66] uppercase tracking-widest whitespace-nowrap">
           Live activity
         </span>
-      </div>
+      </div> */}
 
       <div className="marquee-track" style={{ paddingLeft: "130px" }}>
         {items.map((item, i) => (
