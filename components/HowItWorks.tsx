@@ -78,7 +78,7 @@ export default function HowItWorks() {
         </h2>
 
         {/* Steps */}
-        <div className="grid md:grid-cols-3 gap-6 relative">
+        <div className="grid md:grid-cols-3 gap-8 relative">
           {/* Connector lines (desktop) */}
           <div className="hidden md:block absolute top-[52px] left-[calc(33.33%-24px)] right-[calc(33.33%-24px)] h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(74,158,255,0.3), transparent)" }}
@@ -104,7 +104,7 @@ export default function HowItWorks() {
 
               {/* Arrow connector (between cards) */}
               {i < 2 && (
-                <div className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 items-center justify-center w-8 h-8">
+                <div className="hidden md:flex absolute -right-8 top-1/2 -translate-y-1/2 z-10 items-center justify-center w-8 h-8">
                   <svg className="w-4 h-4 text-[#4A9EFF] animate-arrow-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                   </svg>
