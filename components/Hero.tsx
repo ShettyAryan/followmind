@@ -11,7 +11,10 @@ export default function Hero() {
           loop
           playsInline
           className="w-full h-full object-cover"
-          style={{ mixBlendMode: "luminosity", filter: "saturate(0.3) brightness(0.5)" }}
+          style={{
+            mixBlendMode: "luminosity",
+            filter: "saturate(0.3) brightness(0.5)",
+          }}
         >
           <source
             src="https://res.cloudinary.com/dsvgadc5d/video/upload/v1774459446/sass_video_e2umit.mp4"
@@ -43,15 +46,17 @@ export default function Hero() {
           className="text-[clamp(2.3rem,10vw,5.5rem)] font-serif text-[#F0F4FF] leading-[1.05] tracking-tight mb-5 sm:mb-6"
           style={{ textShadow: "0 0 80px rgba(74,158,255,0.12)" }}
         >
-          Stop forgetting.
+          Never lose a deal because
           <br />
-          <em className="italic font-normal opacity-85">Start following up.</em>
+          <em className="italic font-normal opacity-85">
+            You forgot to follow up.
+          </em>
         </h1>
 
         {/* Subheadline */}
         <p className="max-w-xl text-[13px] sm:text-base md:text-lg text-[#7A8BA8] mb-8 sm:mb-10 leading-relaxed">
-          Connect your Google Sheets. Get personalized, context-aware follow-up
-          emails drafted directly into Gmail — automatically.
+          FollowMind tracks your conversations and tells you exactly what to say
+          next - so every follow-up feels timely, relevant, and natural.
         </p>
 
         {/* CTAs */}
@@ -65,7 +70,7 @@ export default function Hero() {
         </div>
 
         {/* Hero mockup cards */}
-        <div className="relative hidden md:flex w-full max-w-4xl h-[360px] items-center justify-center mb-0">
+        <div className="relative hidden md:flex w-full max-w-[650px] h-[360px] items-center justify-center mb-0">
           {/* Card 3 — Context chip (furthest back) */}
           <div
             className="absolute glass rounded-xl p-4 w-56 shadow-2xl animate-float-c"
@@ -222,7 +227,8 @@ export default function Hero() {
           <div className="space-y-2.5">
             <p className="text-xs text-[#F0F4FF]">To: elena@lumon.corp</p>
             <p className="text-xs text-[#7A8BA8] leading-relaxed">
-              FollowMind reads your context, drafts a personalized follow-up, and sends it to Gmail in one click.
+              FollowMind reads your context, drafts a personalized follow-up,
+              and sends it to Gmail in one click.
             </p>
             <div className="pt-3 border-t border-white/5 flex gap-2">
               <button className="flex-1 py-2.5 glass rounded-lg text-[10px] font-mono text-[#7A8BA8] border border-white/8">

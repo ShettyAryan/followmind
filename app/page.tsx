@@ -26,13 +26,13 @@ export default function Home() {
       <GlowDivider />
       <EmailDemo />
       <GlowDivider dim />
-      <Metrics />
+      {/* <Metrics /> */}
       <GlowDivider />
       <Comparison />
       <GlowDivider dim />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <GlowDivider />
-      <Pricing />
+      {/* <Pricing /> */}
       <GlowDivider dim />
       <FAQ />
       <FooterCTA />
