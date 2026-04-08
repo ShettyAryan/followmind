@@ -1,14 +1,14 @@
 "use client";
 
 const events = [
-  { icon: "✦", text: "Alex M. just sent 3 AI-drafted follow-ups", time: "2m ago" },
-  { icon: "⬆", text: "Sarah K. closed a deal after a FollowMind draft", time: "8m ago" },
-  { icon: "✦", text: "Priya S. recovered a cold lead from 47 days ago", time: "11m ago" },
-  { icon: "⬆", text: "Marcus T. set up 200-contact sheet in 4 minutes", time: "19m ago" },
-  { icon: "✦", text: "Elena V. replied within 2 hours of AI draft sent", time: "23m ago" },
-  { icon: "⬆", text: "James O. cleared his entire queue before noon", time: "31m ago" },
-  { icon: "✦", text: "Naomi R. booked 3 calls from one batch of drafts", time: "44m ago" },
-  { icon: "⬆", text: "Thomas W. integrated 5-year contact archive", time: "58m ago" },
+  { icon: "✦", text: "You just sent 3 AI-drafted follow-ups", time: "2m ago" },
+  { icon: "⬆", text: "You closed a deal after a FollowMind draft", time: "8m ago" },
+  { icon: "✦", text: "You recovered a cold lead from 47 days ago", time: "11m ago" },
+  { icon: "⬆", text: "You set up 200-contact sheet in 4 minutes", time: "19m ago" },
+  { icon: "✦", text: "You replied within 2 hours of AI draft sent", time: "23m ago" },
+  { icon: "⬆", text: "You cleared his entire queue before noon", time: "31m ago" },
+  { icon: "✦", text: "You booked 3 calls from one batch of drafts", time: "44m ago" },
+  { icon: "⬆", text: "You integrated 5-year contact archive", time: "58m ago" },
 ];
 
 // Duplicate for seamless loop

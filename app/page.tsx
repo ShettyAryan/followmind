@@ -1,5 +1,6 @@
 import Nav          from "@/components/Nav";
 import Hero         from "@/components/Hero";
+import ProblemSection from "@/components/ProblemSection";
 import IntegrationBar from "@/components/IntegrationBar";
 import LiveTicker   from "@/components/LiveTicker";
 import HowItWorks   from "@/components/HowItWorks";
@@ -18,6 +19,7 @@ export default function Home() {
     <main>
       <Nav />
       <Hero />
+      <ProblemSection />
       <IntegrationBar />
       <LiveTicker />
       <HowItWorks />
